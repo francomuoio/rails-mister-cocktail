@@ -1,9 +1,16 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
-<p><%= @cocktail.name %></p>
-<p><% @cocktail.doses.each do |e| %></p>
-<p><%= e.ingredient.name %></p>
-<p><%= e.description %></p>
-<p><% end %></p>
- <%= link_to "home", cocktails_path, class: "btn btn-primary" %>
-  <%= link_to "ajouter une doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+<div class="container">
+  <div class="row">
+    <div class="card">
+    <p class="text-center"><%= @cocktail.name.upcase %></p>
+    <br>
+    <p><strong>Ingrédients : </strong></p>
+    <p><% @cocktail.doses.each do |e| %></p>
+    <p><%= e.ingredient.name %></p>
+    <p><%= e.description %></p>
+    <p>-----------------------</p>
+    <p><% end %></p>
+    <%= link_to "home", cocktails_path, class: "btn btn-primary" %>
+    <%= link_to "ajouter une doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

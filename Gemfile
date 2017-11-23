@@ -1,3 +1,5 @@
+ruby '2.3.5'
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -35,7 +37,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'simple_form'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-ruby '2.3.5'
+
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'autoprefixer-rails'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

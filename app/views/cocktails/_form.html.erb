@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="text-center">
   <%= simple_form_for [@cocktail] do |f| %>
   <%= f.input :name %>
-  <%= f.submit "ajouter un co", class: "btn btn-primary" %>
+  <%= f.submit "ajouter un cocktail", class: "btn btn-primary" %>
+  <%= link_to "home", cocktails_path, class: "btn btn-primary text-center" %>
 <% end %>
 </div>
 </div>
