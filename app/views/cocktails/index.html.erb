@@ -1,0 +1,17 @@
+<h1>Cocktails#index</h1>
+<p>Find me in app/views/cocktails/index.html.erb</p>
+<%= link_to 'new', new_cocktail_path %>
+<div class="container">
+  <div class="row ">
+    <p><% @cocktails.each do |cocktail| %></p>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card text-center">
+        <p id="nom_restaurant"><strong>Restaurant: <%= cocktail.name.upcase %></strong> </p>
+        <div class="thomas">
+        <%= link_to 'cocktail', cocktail_path(cocktail) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
