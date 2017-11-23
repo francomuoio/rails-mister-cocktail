@@ -5,4 +5,6 @@ resources :cocktails, only: [ :index, :new, :show, :create ] do
 end
 resources :doses, except: [ :new, :create ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root to: 'cocktails#index'
 end
