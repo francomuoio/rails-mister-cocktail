@@ -4,6 +4,7 @@
     <p class="text-center"><%= @cocktail.name.upcase %></p>
     <br>
     <p><strong>INGREDIENTS : </strong></p>
+    <p><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></p>
     <p><% @cocktail.doses.each do |e| %></p>
     <p><%= e.ingredient.name %>: <%= e.description %> cl </p>
     <p>-----------------------</p>
