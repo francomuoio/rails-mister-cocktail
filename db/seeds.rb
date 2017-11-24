@@ -19,6 +19,6 @@ user_serialized = open(url).read
 ingredients = JSON.parse(user_serialized)
 
 
-ingredients[‘drinks’].each do |element|
+ingredients['drinks'].each do |element|
    Ingredient.create(name: element['strIngredient1'])
 end
