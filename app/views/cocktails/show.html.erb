@@ -9,18 +9,25 @@
       </div>
     </div>
 
-
     <div class="col-xs-12 col-sm-6">
       <div class="card-show">
         <h3>INGREDIENTS:</h3>
         <% @cocktail.doses.each do |e| %>
         <p><%= e.ingredient.name %>:<%= e.description %> cl </p>
         <p><% end %></p>
+        <h3>reviews:</h3>
+        <% @cocktail.reviews.each do |e| %>
+        <p><%= e.title %></p>
+        <p><%= e.rating %></p>
+        <p><%= e.content %></p>
+        <p><% end %></p>
         <p><%= link_to "ajouter une dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %></p>
+        <p><%= link_to "ajouter une review", new_cocktail_review_path(@cocktail), class: "btn btn-primary" %></p>
       </div>
     </div>
   </div>
-</div>
+
+
 
 
 
