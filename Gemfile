@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'simple_form'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'figaro'
 
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
