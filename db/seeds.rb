@@ -4,15 +4,16 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-require 'json'
-require 'open-uri'
+#   Character.create(name: 'Luke', movie: movies.first
 
 
 
 require 'json'
 require 'open-uri'
+
+Dose.destroy_all
+Cocktail.destroy_all
+Review.destroy_all
 
 url = 'http://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 user_serialized = open(url).read
