@@ -1,16 +1,26 @@
+<br>
+<br>
 <div class="container">
   <div class="row">
-    <div class="card">
-    <p class="text-center"><%= @cocktail.name.upcase %></p>
-    <br>
-    <p><strong>INGREDIENTS : </strong></p>
-    <p><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></p>
-    <p><% @cocktail.doses.each do |e| %></p>
-    <p><%= e.ingredient.name %>: <%= e.description %> cl </p>
-    <p>-----------------------</p>
-    <p><% end %></p>
-    <%= link_to "home", cocktails_path, class: "btn btn-primary" %>
-    <%= link_to "ajouter une doses", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-show text-center">
+        <p class=""><%= @cocktail.name.upcase %></p>
+        <p><%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %></p>
+      </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="card-show">
+        <h3>INGREDIENTS:</h3>
+        <% @cocktail.doses.each do |e| %>
+        <p><%= e.ingredient.name %>:<%= e.description %> cl </p>
+        <p><% end %></p>
+        <p><%= link_to "ajouter une dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %></p>
+      </div>
     </div>
   </div>
 </div>
+
+
+

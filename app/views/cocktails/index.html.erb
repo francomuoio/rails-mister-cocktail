@@ -1,16 +1,26 @@
-<br>
-<br>
-<div class="container">
-  <div class="row ">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.verifiedbusinesses.com.au/sites/default/files/listing_pics/photo%20-%20cocktails.jpg');">
+  <div class="banner-content">
+    <h1>Mister Cocktail</h1>
+    <p>Créer votre propre cocktail n'a jamais était aussi simple</p>
     <%= link_to 'new', new_cocktail_path, class: 'btn btn-danger'%>
+  </div>
+</div>
+<br>
+<br>
+
+
+<div class="container">
+  <div class="row">
     <p><% @cocktails.each do |cocktail| %></p>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card text-center">
-        <p id="nom_restaurant"><strong>Cocktail: <%= cocktail.name.upcase %></strong> </p>
-        <div class="thomas">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
+        <div class="card-category"><p><strong>Cocktail: <%= cocktail.name.upcase %></strong> </p></div>
+        <div class="card-description">
         <%= link_to 'voir le cocktail', cocktail_path(cocktail), class: "btn btn-primary" %>
         </div>
-      </div>
+        </div>
     </div>
     <% end %>
   </div>
