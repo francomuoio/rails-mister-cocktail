@@ -4,7 +4,7 @@
 
 <%= simple_form_for [@cocktail, @review] do |f| %>
   <%= f.input :title %>
-  <%= f.input :rating %>
+  <%= f.input :rating, collection: (0..5), as: :select %>
   <%= f.input :content %>
   <%= f.submit "add a review", class: "btn btn-primary" %>
 <% end %>
