@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-4">
+      <p><%= simple_form_for [@cocktail, @review] do |f|  %> </p>
+        <p><%= f.input :title %> </p>
+        <p><%= f.input :rating, collection: (0..5), as: :select %></p>
+        <p><%= f.input :content %> </p>
+        <p><%= f.submit "add a review", class: "btn btn-primary" %> </p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for [@cocktail, @review] do |f| %>
-  <%= f.input :title %>
-  <%= f.input :rating, collection: (0..5), as: :select %>
-  <%= f.input :content %>
-  <%= f.submit "add a review", class: "btn btn-primary" %>
-<% end %>
-</div>
-</div>
-</div>
+
