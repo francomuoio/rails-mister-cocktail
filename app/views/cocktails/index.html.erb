@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1>Mister Cocktail</h1>
     <p>Créer votre propre cocktail n'a jamais était aussi simple</p>
-    <%= link_to 'new', new_cocktail_path, class: 'btn btn-danger'%>
+    <%= link_to 'AJOUTER UN COCKTAIL', new_cocktail_path, class: 'btn btn-danger'%>
   </div>
 </div>
 <br>
@@ -14,14 +14,20 @@
     <p><% @cocktails.each do |cocktail| %></p>
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)),
          url(<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>)">
-        <div class="card-category"><p><strong>Cocktail: <%= cocktail.name.upcase %></strong> </p></div>
-        <div class="card-description">
-        <%= link_to 'voir le cocktail', cocktail_path(cocktail), class: "btn btn-primary" %>
-        </div>
+          <div class="card-category"><p><strong>Cocktail: <%= cocktail.name.upcase %></strong> </p></div>
+          <div class="card-description">
+          <%= link_to cocktail_path(cocktail) do %>
+           "<i class="fa fa-plus-circle fa-2x card-link" aria-hidden="true"></i>
+           <% end %>
+          </div>
         </div>
     </div>
     <% end %>
   </div>
 </div>
+
+ <%= link_to cocktails_path do %>
+        <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>
+        <% end %>
